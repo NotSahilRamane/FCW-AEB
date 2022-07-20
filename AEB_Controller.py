@@ -6,6 +6,7 @@ import scipy
 import pandas
 import matplotlib.pyplot as plt
 
+
 ######################################################################################
 class AEB_Controller:
     def __init__(self, relative_dist, ego_vel, ACC_set_speed, ttc, ego_acc):
@@ -167,7 +168,7 @@ class AEB_Controller:
             return a1, a2, a3
     
     def MOO_Dist_Calc(self):
-        dist_MOO = min(dist_ObjDet,dist_Seg)
+        dist_MOO = min(features.extractDataMOO.MOT_position,features.extractDataRoadSeg.distance)
         return dist_MOO
     
 
@@ -249,7 +250,7 @@ if __name__ == '__main__':
     for current_time in range(100):
         #print(current_time)
         # define the inputs to be taken from perception module 
-        rel_dist = 100 - current_time 
+        rel_dist = aeb.MOO 
         
         #ego_vel = None 
         acc_set_speed = 10 
