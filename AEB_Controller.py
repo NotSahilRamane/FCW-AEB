@@ -165,6 +165,11 @@ class AEB_Controller:
             a2 = 0
             a1 = 0
             return a1, a2, a3
+    
+    def MOO_Dist_Calc(self):
+        dist_MOO = min(dist_ObjDet,dist_Seg)
+        return dist_MOO
+    
 
 ############################################################################
 class Brake_Control:
